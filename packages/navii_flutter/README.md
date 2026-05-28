@@ -6,22 +6,36 @@
 
 Drop-in deterministic mascot avatar widget for Flutter. Same seed = same mascot, every time. No database, no uploads, no state required.
 
+Mascots are abstract, friendly characters generated entirely on-device — similar in spirit to GitHub identicons or DiceBear, but with a consistent illustrated style across all users.
+
 > A Flutter widget wrapping [`navii_dart`](https://pub.dev/packages/navii_dart),  
 > a Dart port of [navii](https://github.com/uxderrick/navii) by uxderrick.
 
 ---
 
+## Preview
+
+<p>
+  <img src="screenshots/chat.png" width="19%" alt="Chat list with avatars" />
+  <img src="screenshots/gallery.png" width="19%" alt="Gallery of 38 avatars" />
+  <img src="screenshots/picker.png" width="19%" alt="Avatar picker" />
+  <img src="screenshots/shapes.png" width="19%" alt="Shapes, status and groups" />
+  <img src="screenshots/customize.png" width="19%" alt="22 palettes" />
+</p>
+
+---
+
 ## Features
 
-- 🎭 **22M+ unique mascots** — every user gets a distinct character
-- 🔒 **Deterministic** — same seed always produces the same avatar
-- 📴 **Fully offline** — no network calls, no external assets, no CDN
-- ✂️ **Shape options** — circle, square, or rounded rectangle clip
-- 🟢 **Status indicator** — online/away/busy dot with position control
-- 🔵 **Border ring** — colored ring around the avatar
-- 👆 **Tap callback** — `onTap` for navigation or selection
-- 👥 **Group avatars** — stacked row with overflow count badge (`NaviiGroup`)
-- 🎛️ **Picker widget** — grid picker + bottom sheet for user avatar selection
+- **22M+ unique mascots** — every user gets a distinct character
+- **Deterministic** — same seed always produces the same avatar
+- **Fully offline** — no network calls, no external assets, no CDN
+- **Shape options** — circle, square, or rounded rectangle clip
+- **Status indicator** — online/away/busy dot with position control
+- **Border ring** — colored ring around the avatar
+- **Tap callback** — `onTap` for navigation or selection
+- **Group avatars** — stacked row with overflow count badge (`NaviiGroup`)
+- **Picker widget** — grid picker + bottom sheet for user avatar selection
 
 ---
 
@@ -136,6 +150,28 @@ Pass any of these to `AvatarOptions(paletteId: ...)`:
 | Display name | ⚠️ Avatar changes if user renames |
 
 If the seed changes, the avatar changes. Store the seed in your database alongside the user record.
+
+---
+
+## Seed stability guarantee
+
+Once a seed produces a mascot in `0.x`, it will produce the **same mascot** in all future `0.x` and `1.x` releases. We treat the seed → avatar mapping as a contract — your users' avatars will not change after an update.
+
+New variants (palettes, body styles, etc.) may be added in future releases, but only ever appended. Existing seeds are never reassigned.
+
+---
+
+## Accessibility
+
+Pass a `semanticsLabel` so screen readers can identify the avatar:
+
+```dart
+Navii(
+  seed: user.id,
+  size: 48,
+  semanticsLabel: 'Avatar for ${user.name}',
+)
+```
 
 ---
 

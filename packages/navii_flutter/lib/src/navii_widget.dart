@@ -72,6 +72,13 @@ class Navii extends StatelessWidget {
   /// Corner where the status dot is anchored. Defaults to [Alignment.bottomRight].
   final Alignment statusAlignment;
 
+  /// Label read by screen readers in place of the avatar image.
+  ///
+  /// Provide a meaningful description, e.g. `'Avatar for ${user.name}'`.
+  /// When null the avatar is treated as decorative and ignored by assistive
+  /// technology.
+  final String? semanticsLabel;
+
   const Navii({
     super.key,
     required this.seed,
@@ -84,6 +91,7 @@ class Navii extends StatelessWidget {
     this.statusColor,
     this.statusSize = 10.0,
     this.statusAlignment = Alignment.bottomRight,
+    this.semanticsLabel,
   });
 
   @override
@@ -96,11 +104,16 @@ class Navii extends StatelessWidget {
     );
     final svg = createAvatar(seed, opts);
 
-    Widget avatar = SvgPicture.string(
-      svg,
-      width: size,
-      height: size,
-      fit: BoxFit.contain,
+    Widget avatar = Semantics(
+      label: semanticsLabel,
+      image: true,
+      excludeSemantics: semanticsLabel == null,
+      child: SvgPicture.string(
+        svg,
+        width: size,
+        height: size,
+        fit: BoxFit.contain,
+      ),
     );
 
     // Shape clipping

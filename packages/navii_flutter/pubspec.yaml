@@ -17,6 +17,18 @@ topics:
   - offline
   - profile-picture
 
+screenshots:
+  - description: 'Chat list — each user gets a unique mascot avatar automatically'
+    path: screenshots/chat.png
+  - description: 'Gallery — 38 avatars showing the range of combinations'
+    path: screenshots/gallery.png
+  - description: 'Avatar picker — let users choose from variants of their seed'
+    path: screenshots/picker.png
+  - description: 'Shapes, status indicators, borders, and group avatars'
+    path: screenshots/shapes.png
+  - description: '22 built-in palettes — each changes the full colour scheme'
+    path: screenshots/customize.png
+
 environment:
   sdk: '>=3.0.0 <4.0.0'
   flutter: '>=3.10.0'
