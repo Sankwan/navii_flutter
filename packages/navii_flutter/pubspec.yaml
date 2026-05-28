@@ -3,7 +3,7 @@ description: >-
   Deterministic mascot-style avatar widget for Flutter.
   Drop-in avatar generation — same seed = same mascot, every time.
   No database, no uploads, no state required.
-version: 0.1.0
+version: 0.2.0
 repository: https://github.com/Sankwan/navii_flutter/tree/main/packages/navii_flutter
 homepage: https://github.com/Sankwan/navii_flutter
 issue_tracker: https://github.com/Sankwan/navii_flutter/issues

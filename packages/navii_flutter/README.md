@@ -16,6 +16,7 @@ Mascots are abstract, friendly characters generated entirely on-device — simil
 ## Preview
 
 <p>
+  <img src="screenshots/navii_demo.gif" width="32%" alt="Live demo" />
   <img src="screenshots/chat.png" width="24%" alt="Chat list with avatars" />
   <img src="screenshots/picker.png" width="24%" alt="Avatar picker" />
   <img src="screenshots/customize.png" width="24%" alt="Shapes, status and groups" />

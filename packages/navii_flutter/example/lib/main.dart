@@ -1880,9 +1880,9 @@ class _DeterminismNote extends StatelessWidget {
           ),
           SizedBox(height: 8),
           Text(
-            'Your name is hashed into a number, then used to seed a '
-            'random number generator. The generator picks one of 22M+ '
-            'combinations — deterministically. No server, no database, '
+            'Pass any string as the seed — your name, a UUID, or any other unique identifier. '
+            'a random avatar is generated. Picks one of 22M+ '
+            'combinations. Same seed = same avatar, '
             'works offline.',
             style: TextStyle(
               fontSize: 12,
