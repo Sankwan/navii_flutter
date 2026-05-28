@@ -16,11 +16,11 @@ Mascots are abstract, friendly characters generated entirely on-device — simil
 ## Preview
 
 <p>
-  <img src="screenshots/navii_demo.gif" width="32%" alt="Live demo" />
-  <img src="screenshots/chat.png" width="24%" alt="Chat list with avatars" />
-  <img src="screenshots/picker.png" width="24%" alt="Avatar picker" />
-  <img src="screenshots/customize.png" width="24%" alt="Shapes, status and groups" />
-  <img src="screenshots/customize_2.png" width="24%" alt="Sizes and palettes" />
+  <img src="https://raw.githubusercontent.com/Sankwan/navii_flutter/main/packages/navii_flutter/screenshots/navii_demo.gif" width="32%" alt="Live demo" />
+  <img src="https://raw.githubusercontent.com/Sankwan/navii_flutter/main/packages/navii_flutter/screenshots/chat.png" width="24%" alt="Chat list with avatars" />
+  <img src="https://raw.githubusercontent.com/Sankwan/navii_flutter/main/packages/navii_flutter/screenshots/picker.png" width="24%" alt="Avatar picker" />
+  <img src="https://raw.githubusercontent.com/Sankwan/navii_flutter/main/packages/navii_flutter/screenshots/customize.png" width="24%" alt="Shapes, status and groups" />
+  <img src="https://raw.githubusercontent.com/Sankwan/navii_flutter/main/packages/navii_flutter/screenshots/customize_2.png" width="24%" alt="Sizes and palettes" />
 </p>
 
 ---

@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-05-28
+
+### Fixed
+- README images now use absolute GitHub raw URLs so they display correctly on pub.dev.
+
 ## [0.2.0] - 2026-05-28
 
 ### Added
@@ -32,6 +37,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `naviVariants(baseSeed)`: generates stable variant seed strings.
 - Renders via `flutter_svg` — no native code, no platform channels.
 
-[Unreleased]: https://github.com/Sankwan/navii_flutter/compare/navii_flutter-v0.2.0...HEAD
+[Unreleased]: https://github.com/Sankwan/navii_flutter/compare/navii_flutter-v0.2.1...HEAD
+[0.2.1]: https://github.com/Sankwan/navii_flutter/compare/navii_flutter-v0.2.0...navii_flutter-v0.2.1
 [0.2.0]: https://github.com/Sankwan/navii_flutter/compare/navii_flutter-v0.1.0...navii_flutter-v0.2.0
 [0.1.0]: https://github.com/Sankwan/navii_flutter/releases/tag/navii_flutter-v0.1.0
