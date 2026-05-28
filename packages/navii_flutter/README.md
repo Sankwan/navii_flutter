@@ -16,11 +16,10 @@ Mascots are abstract, friendly characters generated entirely on-device — simil
 ## Preview
 
 <p>
-  <img src="screenshots/chat.png" width="19%" alt="Chat list with avatars" />
-  <img src="screenshots/gallery.png" width="19%" alt="Gallery of 38 avatars" />
-  <img src="screenshots/picker.png" width="19%" alt="Avatar picker" />
-  <img src="screenshots/shapes.png" width="19%" alt="Shapes, status and groups" />
-  <img src="screenshots/customize.png" width="19%" alt="22 palettes" />
+  <img src="screenshots/chat.png" width="24%" alt="Chat list with avatars" />
+  <img src="screenshots/picker.png" width="24%" alt="Avatar picker" />
+  <img src="screenshots/customize.png" width="24%" alt="Shapes, status and groups" />
+  <img src="screenshots/customize_2.png" width="24%" alt="Sizes and palettes" />
 </p>
 
 ---
