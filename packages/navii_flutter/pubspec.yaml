@@ -25,8 +25,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_svg: ^2.0.0
-  navii_dart:
-    path: ../navii_dart
+  navii_dart: ^0.1.0
 
 dev_dependencies:
   flutter_test:
