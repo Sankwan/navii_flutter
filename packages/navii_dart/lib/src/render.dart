@@ -29,8 +29,7 @@ String renderAvatar(AvatarSpec spec, [AvatarOptions? options]) {
 
   final bodyMarkup = renderBody(spec.body, spec.palette, gradId);
   final bodyTransform = _transformBody(spec.bodyScale, anchor);
-  final bodyFilter =
-      spec.hueShift != 0 ? ' filter="url(#$hueId)"' : '';
+  final bodyFilter = spec.hueShift != 0 ? ' filter="url(#$hueId)"' : '';
   final bodyWrapped =
       '<g$bodyTransform$bodyFilter><g class="body">$bodyMarkup</g></g>';
 

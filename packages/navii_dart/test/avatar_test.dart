@@ -76,8 +76,8 @@ void main() {
     });
 
     test('background override is respected', () {
-      final spec = selectAvatar('seed',
-          AvatarOptions(background: BackgroundId.ring));
+      final spec =
+          selectAvatar('seed', AvatarOptions(background: BackgroundId.ring));
       expect(spec.background, equals(BackgroundId.ring));
     });
   });

@@ -124,8 +124,7 @@ class Navii extends StatelessWidget {
               border: Border.all(color: borderColor!, width: borderWidth),
             ),
           NaviiShape.rounded => BoxDecoration(
-              borderRadius:
-                  BorderRadius.circular(size * 0.2 + borderWidth),
+              borderRadius: BorderRadius.circular(size * 0.2 + borderWidth),
               border: Border.all(color: borderColor!, width: borderWidth),
             ),
           NaviiShape.square => BoxDecoration(

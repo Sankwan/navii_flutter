@@ -63,25 +63,30 @@ class _ShellState extends State<_Shell> {
         indicatorColor: const Color(0xFF6366F1),
         destinations: const [
           NavigationDestination(
-              icon: Icon(Icons.dashboard_outlined),
-              selectedIcon: Icon(Icons.dashboard),
-              label: 'Use Cases'),
+            icon: Icon(Icons.dashboard_outlined),
+            selectedIcon: Icon(Icons.dashboard),
+            label: 'Use Cases',
+          ),
           NavigationDestination(
-              icon: Icon(Icons.person_outlined),
-              selectedIcon: Icon(Icons.person),
-              label: 'Try It'),
+            icon: Icon(Icons.person_outlined),
+            selectedIcon: Icon(Icons.person),
+            label: 'Try It',
+          ),
           NavigationDestination(
-              icon: Icon(Icons.touch_app_outlined),
-              selectedIcon: Icon(Icons.touch_app),
-              label: 'Picker'),
+            icon: Icon(Icons.touch_app_outlined),
+            selectedIcon: Icon(Icons.touch_app),
+            label: 'Picker',
+          ),
           NavigationDestination(
-              icon: Icon(Icons.grid_view_outlined),
-              selectedIcon: Icon(Icons.grid_view),
-              label: 'Gallery'),
+            icon: Icon(Icons.grid_view_outlined),
+            selectedIcon: Icon(Icons.grid_view),
+            label: 'Gallery',
+          ),
           NavigationDestination(
-              icon: Icon(Icons.tune_outlined),
-              selectedIcon: Icon(Icons.tune),
-              label: 'Customize'),
+            icon: Icon(Icons.tune_outlined),
+            selectedIcon: Icon(Icons.tune),
+            label: 'Customize',
+          ),
         ],
       ),
     );
@@ -108,17 +113,21 @@ class UseCasesTab extends StatelessWidget {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               children: [
                 TextSpan(
-                    text: 'navii',
-                    style: TextStyle(color: Color(0xFF818CF8))),
+                  text: 'navii',
+                  style: TextStyle(color: Color(0xFF818CF8)),
+                ),
                 TextSpan(
-                    text: '_flutter',
-                    style: TextStyle(color: Color(0xFFCBD5E1))),
+                  text: '_flutter',
+                  style: TextStyle(color: Color(0xFFCBD5E1)),
+                ),
                 TextSpan(
-                    text: '  use cases',
-                    style: TextStyle(
-                        color: Color(0xFF64748B),
-                        fontWeight: FontWeight.normal,
-                        fontSize: 14)),
+                  text: '  use cases',
+                  style: TextStyle(
+                    color: Color(0xFF64748B),
+                    fontWeight: FontWeight.normal,
+                    fontSize: 14,
+                  ),
+                ),
               ],
             ),
           ),
@@ -134,11 +143,7 @@ class UseCasesTab extends StatelessWidget {
           ),
         ),
         body: const TabBarView(
-          children: [
-            _ChatDemo(),
-            _CommentsDemo(),
-            _ContactsDemo(),
-          ],
+          children: [_ChatDemo(), _CommentsDemo(), _ContactsDemo()],
         ),
       ),
     );
@@ -151,11 +156,29 @@ const _chatConversations = [
   _Convo('Alice Mensah', 'Sounds good, see you then! 👋', '2m', true, 3),
   _Convo('Bob Asante', 'Did you get my last message?', '14m', false, 0),
   _Convo('Carol Adjei', 'The meeting is at 3pm tomorrow', '1h', true, 1),
-  _Convo('David Owusu', 'haha yeah exactly what I was thinking', '2h', false, 0),
-  _Convo('Eve Boateng', 'Can you review the PR when you get a chance?', '3h', true, 0),
+  _Convo(
+    'David Owusu',
+    'haha yeah exactly what I was thinking',
+    '2h',
+    false,
+    0,
+  ),
+  _Convo(
+    'Eve Boateng',
+    'Can you review the PR when you get a chance?',
+    '3h',
+    true,
+    0,
+  ),
   _Convo('Frank Darko', 'On my way!', '5h', false, 0),
   _Convo('Grace Amponsah', 'Thanks for the help earlier 🙏', 'Mon', true, 0),
-  _Convo('Henry Acheampong', 'I\'ll send the files by end of day', 'Mon', false, 0),
+  _Convo(
+    'Henry Acheampong',
+    'I\'ll send the files by end of day',
+    'Mon',
+    false,
+    0,
+  ),
   _Convo('Iris Opoku', 'Happy birthday!! 🎉🎂', 'Sun', true, 0),
   _Convo('Jack Frimpong', 'Let me know what you think', 'Sun', false, 0),
 ];
@@ -221,17 +244,23 @@ class _ChatTile extends StatelessWidget {
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(convo.name,
-              style: const TextStyle(
-                  fontWeight: FontWeight.w600,
-                  color: Color(0xFFE2E8F0),
-                  fontSize: 15)),
-          Text(convo.time,
-              style: TextStyle(
-                  fontSize: 12,
-                  color: convo.unread > 0
-                      ? const Color(0xFF818CF8)
-                      : const Color(0xFF64748B))),
+          Text(
+            convo.name,
+            style: const TextStyle(
+              fontWeight: FontWeight.w600,
+              color: Color(0xFFE2E8F0),
+              fontSize: 15,
+            ),
+          ),
+          Text(
+            convo.time,
+            style: TextStyle(
+              fontSize: 12,
+              color: convo.unread > 0
+                  ? const Color(0xFF818CF8)
+                  : const Color(0xFF64748B),
+            ),
+          ),
         ],
       ),
       subtitle: Row(
@@ -243,10 +272,11 @@ class _ChatTile extends StatelessWidget {
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
-                  fontSize: 13,
-                  color: convo.unread > 0
-                      ? const Color(0xFFCBD5E1)
-                      : const Color(0xFF64748B)),
+                fontSize: 13,
+                color: convo.unread > 0
+                    ? const Color(0xFFCBD5E1)
+                    : const Color(0xFF64748B),
+              ),
             ),
           ),
           if (convo.unread > 0)
@@ -257,11 +287,14 @@ class _ChatTile extends StatelessWidget {
                 color: const Color(0xFF6366F1),
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Text('${convo.unread}',
-                  style: const TextStyle(
-                      fontSize: 11,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold)),
+              child: Text(
+                '${convo.unread}',
+                style: const TextStyle(
+                  fontSize: 11,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
         ],
       ),
@@ -272,22 +305,42 @@ class _ChatTile extends StatelessWidget {
 // ── Comments Demo ────────────────────────────────────────────────────────────
 
 const _comments = [
-  _Comment('Noah Tetteh', '2m ago',
-      'This is exactly what I\'ve been looking for. The determinism aspect is really clever.',
-      24),
-  _Comment('Mia Asare', '8m ago',
-      'How does it handle unicode names like "김민준" or "محمد"?',
-      7),
-  _Comment('Liam Antwi', '15m ago',
-      'Replying to @Mia — yes it works! Just tested it. Every character maps correctly.',
-      12),
-  _Comment('Olivia Mensah', '1h ago', 'Just published a post about this on my blog 🎉',
-      31),
-  _Comment('Peter Asante', '2h ago',
-      'The offline-first approach is a big win for us. No more broken avatar images.',
-      9),
-  _Comment('Quinn Osei', '3h ago', 'Does it support custom palettes at runtime?',
-      5),
+  _Comment(
+    'Noah Tetteh',
+    '2m ago',
+    'This is exactly what I\'ve been looking for. The determinism aspect is really clever.',
+    24,
+  ),
+  _Comment(
+    'Mia Asare',
+    '8m ago',
+    'How does it handle unicode names like "김민준" or "محمد"?',
+    7,
+  ),
+  _Comment(
+    'Liam Antwi',
+    '15m ago',
+    'Replying to @Mia — yes it works! Just tested it. Every character maps correctly.',
+    12,
+  ),
+  _Comment(
+    'Olivia Mensah',
+    '1h ago',
+    'Just published a post about this on my blog 🎉',
+    31,
+  ),
+  _Comment(
+    'Peter Asante',
+    '2h ago',
+    'The offline-first approach is a big win for us. No more broken avatar images.',
+    9,
+  ),
+  _Comment(
+    'Quinn Osei',
+    '3h ago',
+    'Does it support custom palettes at runtime?',
+    5,
+  ),
 ];
 
 class _Comment {
@@ -324,13 +377,20 @@ class _CommentsDemo extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
-                      Text('Samuel Darko',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xFFE2E8F0))),
-                      Text('Just shipped navii_flutter v0.1.0 🚀',
-                          style:
-                              TextStyle(fontSize: 12, color: Color(0xFF64748B))),
+                      Text(
+                        'Samuel Darko',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFFE2E8F0),
+                        ),
+                      ),
+                      Text(
+                        'Just shipped navii_flutter v0.1.0 🚀',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Color(0xFF64748B),
+                        ),
+                      ),
                     ],
                   ),
                 ],
@@ -346,30 +406,44 @@ class _CommentsDemo extends StatelessWidget {
               const SizedBox(height: 12),
               Row(
                 children: [
-                  const Icon(Icons.favorite_border,
-                      size: 18, color: Color(0xFF64748B)),
+                  const Icon(
+                    Icons.favorite_border,
+                    size: 18,
+                    color: Color(0xFF64748B),
+                  ),
                   const SizedBox(width: 4),
-                  const Text('142',
-                      style:
-                          TextStyle(fontSize: 13, color: Color(0xFF64748B))),
+                  const Text(
+                    '142',
+                    style: TextStyle(fontSize: 13, color: Color(0xFF64748B)),
+                  ),
                   const SizedBox(width: 16),
-                  const Icon(Icons.comment_outlined,
-                      size: 18, color: Color(0xFF64748B)),
+                  const Icon(
+                    Icons.comment_outlined,
+                    size: 18,
+                    color: Color(0xFF64748B),
+                  ),
                   const SizedBox(width: 4),
-                  Text('${_comments.length}',
-                      style: const TextStyle(
-                          fontSize: 13, color: Color(0xFF64748B))),
+                  Text(
+                    '${_comments.length}',
+                    style: const TextStyle(
+                      fontSize: 13,
+                      color: Color(0xFF64748B),
+                    ),
+                  ),
                 ],
               ),
             ],
           ),
         ),
         const SizedBox(height: 16),
-        const Text('Comments',
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Color(0xFFE2E8F0),
-                fontSize: 15)),
+        const Text(
+          'Comments',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Color(0xFFE2E8F0),
+            fontSize: 15,
+          ),
+        ),
         const SizedBox(height: 8),
         ..._comments.map((c) => _CommentTile(comment: c)),
       ],
@@ -396,36 +470,54 @@ class _CommentTile extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Text(comment.name,
-                        style: const TextStyle(
-                            fontWeight: FontWeight.w600,
-                            color: Color(0xFFE2E8F0),
-                            fontSize: 13)),
+                    Text(
+                      comment.name,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xFFE2E8F0),
+                        fontSize: 13,
+                      ),
+                    ),
                     const SizedBox(width: 8),
-                    Text(comment.time,
-                        style: const TextStyle(
-                            fontSize: 11, color: Color(0xFF64748B))),
+                    Text(
+                      comment.time,
+                      style: const TextStyle(
+                        fontSize: 11,
+                        color: Color(0xFF64748B),
+                      ),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 4),
-                Text(comment.text,
-                    style: const TextStyle(
-                        fontSize: 13,
-                        color: Color(0xFFCBD5E1),
-                        height: 1.4)),
+                Text(
+                  comment.text,
+                  style: const TextStyle(
+                    fontSize: 13,
+                    color: Color(0xFFCBD5E1),
+                    height: 1.4,
+                  ),
+                ),
                 const SizedBox(height: 6),
                 Row(
                   children: [
-                    const Icon(Icons.favorite_border,
-                        size: 14, color: Color(0xFF64748B)),
+                    const Icon(
+                      Icons.favorite_border,
+                      size: 14,
+                      color: Color(0xFF64748B),
+                    ),
                     const SizedBox(width: 4),
-                    Text('${comment.likes}',
-                        style: const TextStyle(
-                            fontSize: 12, color: Color(0xFF64748B))),
+                    Text(
+                      '${comment.likes}',
+                      style: const TextStyle(
+                        fontSize: 12,
+                        color: Color(0xFF64748B),
+                      ),
+                    ),
                     const SizedBox(width: 16),
-                    const Text('Reply',
-                        style: TextStyle(
-                            fontSize: 12, color: Color(0xFF818CF8))),
+                    const Text(
+                      'Reply',
+                      style: TextStyle(fontSize: 12, color: Color(0xFF818CF8)),
+                    ),
                   ],
                 ),
               ],
@@ -460,31 +552,45 @@ class _ContactsDemo extends StatelessWidget {
         Expanded(
           child: ListView(
             children: _contacts.entries
-                .expand((entry) => [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
-                        child: Text(
-                          entry.key,
-                          style: const TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xFF6366F1),
-                              letterSpacing: 1),
+                .expand(
+                  (entry) => [
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
+                      child: Text(
+                        entry.key,
+                        style: const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF6366F1),
+                          letterSpacing: 1,
                         ),
                       ),
-                      ...entry.value.map((name) => ListTile(
-                            leading: Navii(seed: name, size: 44),
-                            title: Text(name,
-                                style: const TextStyle(
-                                    color: Color(0xFFE2E8F0),
-                                    fontWeight: FontWeight.w500)),
-                            subtitle: const Text('Tap to view profile',
-                                style: TextStyle(
-                                    fontSize: 12, color: Color(0xFF64748B))),
-                            trailing: const Icon(Icons.chevron_right,
-                                color: Color(0xFF475569)),
-                          )),
-                    ])
+                    ),
+                    ...entry.value.map(
+                      (name) => ListTile(
+                        leading: Navii(seed: name, size: 44),
+                        title: Text(
+                          name,
+                          style: const TextStyle(
+                            color: Color(0xFFE2E8F0),
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        subtitle: const Text(
+                          'Tap to view profile',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xFF64748B),
+                          ),
+                        ),
+                        trailing: const Icon(
+                          Icons.chevron_right,
+                          color: Color(0xFF475569),
+                        ),
+                      ),
+                    ),
+                  ],
+                )
                 .toList(),
           ),
         ),
@@ -523,7 +629,9 @@ class _TryItTabState extends State<TryItTab> {
     final trimmed = name.trim();
     if (trimmed.isEmpty) return;
     if (_users.containsKey(trimmed.toLowerCase())) {
-      setState(() => _error = 'User "$trimmed" already exists. Sign in instead.');
+      setState(
+        () => _error = 'User "$trimmed" already exists. Sign in instead.',
+      );
       return;
     }
     setState(() {
@@ -552,7 +660,10 @@ class _TryItTabState extends State<TryItTab> {
   Widget build(BuildContext context) {
     if (_loggedInUser != null) {
       return _ProfileScreen(
-          user: _loggedInUser!, allUsers: _users, onSignOut: _signOut);
+        user: _loggedInUser!,
+        allUsers: _users,
+        onSignOut: _signOut,
+      );
     }
     return _AuthScreen(
       users: _users,
@@ -618,15 +729,15 @@ class _AuthScreenState extends State<_AuthScreen>
           labelColor: const Color(0xFF818CF8),
           unselectedLabelColor: const Color(0xFF64748B),
           indicatorColor: const Color(0xFF6366F1),
-          tabs: const [Tab(text: 'Sign Up'), Tab(text: 'Sign In')],
+          tabs: const [
+            Tab(text: 'Sign Up'),
+            Tab(text: 'Sign In'),
+          ],
         ),
       ),
       body: TabBarView(
         controller: _tabController,
-        children: [
-          _buildSignUp(),
-          _buildSignIn(),
-        ],
+        children: [_buildSignUp(), _buildSignIn()],
       ),
     );
   }
@@ -649,7 +760,9 @@ class _AuthScreenState extends State<_AuthScreen>
                       Text(
                         'This will be your avatar',
                         style: TextStyle(
-                            fontSize: 13, color: Colors.grey.shade500),
+                          fontSize: 13,
+                          color: Colors.grey.shade500,
+                        ),
                       ),
                     ],
                   )
@@ -662,15 +775,24 @@ class _AuthScreenState extends State<_AuthScreen>
                           color: const Color(0xFF1E293B),
                           shape: BoxShape.circle,
                           border: Border.all(
-                              color: const Color(0xFF334155), width: 2),
+                            color: const Color(0xFF334155),
+                            width: 2,
+                          ),
                         ),
-                        child: const Icon(Icons.person,
-                            size: 40, color: Color(0xFF475569)),
+                        child: const Icon(
+                          Icons.person,
+                          size: 40,
+                          color: Color(0xFF475569),
+                        ),
                       ),
                       const SizedBox(height: 8),
-                      const Text('Enter your name to preview your avatar',
-                          style: TextStyle(
-                              fontSize: 13, color: Color(0xFF64748B))),
+                      const Text(
+                        'Enter your name to preview your avatar',
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Color(0xFF64748B),
+                        ),
+                      ),
                     ],
                   ),
           ),
@@ -682,18 +804,20 @@ class _AuthScreenState extends State<_AuthScreen>
             textCapitalization: TextCapitalization.words,
           ),
           const SizedBox(height: 12),
-          if (widget.error != null)
-            _ErrorBanner(widget.error!),
+          if (widget.error != null) _ErrorBanner(widget.error!),
           const SizedBox(height: 12),
           SizedBox(
             width: double.infinity,
             child: FilledButton(
               onPressed: () => widget.onSignUp(widget.liveController.text),
               style: FilledButton.styleFrom(
-                  backgroundColor: const Color(0xFF6366F1),
-                  padding: const EdgeInsets.symmetric(vertical: 14)),
-              child: const Text('Create Account',
-                  style: TextStyle(fontSize: 16)),
+                backgroundColor: const Color(0xFF6366F1),
+                padding: const EdgeInsets.symmetric(vertical: 14),
+              ),
+              child: const Text(
+                'Create Account',
+                style: TextStyle(fontSize: 16),
+              ),
             ),
           ),
           const SizedBox(height: 32),
@@ -704,15 +828,21 @@ class _AuthScreenState extends State<_AuthScreen>
               spacing: 12,
               runSpacing: 12,
               children: widget.users.values
-                  .map((name) => Column(
-                        children: [
-                          Navii(seed: name, size: 48),
-                          const SizedBox(height: 4),
-                          Text(name.split(' ').first,
-                              style: const TextStyle(
-                                  fontSize: 11, color: Color(0xFF64748B))),
-                        ],
-                      ))
+                  .map(
+                    (name) => Column(
+                      children: [
+                        Navii(seed: name, size: 48),
+                        const SizedBox(height: 4),
+                        Text(
+                          name.split(' ').first,
+                          style: const TextStyle(
+                            fontSize: 11,
+                            color: Color(0xFF64748B),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
                   .toList(),
             ),
           ],
@@ -730,38 +860,62 @@ class _AuthScreenState extends State<_AuthScreen>
         children: [
           const SizedBox(height: 40),
           if (widget.users.isEmpty) ...[
-            const Icon(Icons.person_add_outlined,
-                size: 64, color: Color(0xFF334155)),
+            const Icon(
+              Icons.person_add_outlined,
+              size: 64,
+              color: Color(0xFF334155),
+            ),
             const SizedBox(height: 16),
-            const Text('No accounts yet.',
-                style: TextStyle(color: Color(0xFF64748B))),
-            const Text('Create one in the Sign Up tab.',
-                style: TextStyle(color: Color(0xFF475569), fontSize: 13)),
+            const Text(
+              'No accounts yet.',
+              style: TextStyle(color: Color(0xFF64748B)),
+            ),
+            const Text(
+              'Create one in the Sign Up tab.',
+              style: TextStyle(color: Color(0xFF475569), fontSize: 13),
+            ),
             const SizedBox(height: 32),
           ] else ...[
-            const Text('Your accounts',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold, color: Color(0xFFE2E8F0))),
+            const Text(
+              'Your accounts',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Color(0xFFE2E8F0),
+              ),
+            ),
             const SizedBox(height: 16),
-            ...widget.users.values.map((name) => ListTile(
-                  contentPadding:
-                      const EdgeInsets.symmetric(horizontal: 0, vertical: 4),
-                  leading: Navii(seed: name, size: 44),
-                  title: Text(name,
-                      style: const TextStyle(color: Color(0xFFE2E8F0))),
-                  subtitle: const Text('Tap to sign in',
-                      style:
-                          TextStyle(fontSize: 12, color: Color(0xFF64748B))),
-                  trailing: const Icon(Icons.arrow_forward_ios,
-                      size: 14, color: Color(0xFF475569)),
-                  onTap: () => widget.onSignIn(name),
-                )),
+            ...widget.users.values.map(
+              (name) => ListTile(
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 0,
+                  vertical: 4,
+                ),
+                leading: Navii(seed: name, size: 44),
+                title: Text(
+                  name,
+                  style: const TextStyle(color: Color(0xFFE2E8F0)),
+                ),
+                subtitle: const Text(
+                  'Tap to sign in',
+                  style: TextStyle(fontSize: 12, color: Color(0xFF64748B)),
+                ),
+                trailing: const Icon(
+                  Icons.arrow_forward_ios,
+                  size: 14,
+                  color: Color(0xFF475569),
+                ),
+                onTap: () => widget.onSignIn(name),
+              ),
+            ),
             const SizedBox(height: 16),
           ],
           TextField(
             controller: widget.nameController,
             style: const TextStyle(color: Color(0xFFE2E8F0)),
-            decoration: _inputDecoration('Or type your name', Icons.person_outline),
+            decoration: _inputDecoration(
+              'Or type your name',
+              Icons.person_outline,
+            ),
             textCapitalization: TextCapitalization.words,
           ),
           const SizedBox(height: 12),
@@ -772,8 +926,9 @@ class _AuthScreenState extends State<_AuthScreen>
             child: FilledButton(
               onPressed: () => widget.onSignIn(widget.nameController.text),
               style: FilledButton.styleFrom(
-                  backgroundColor: const Color(0xFF6366F1),
-                  padding: const EdgeInsets.symmetric(vertical: 14)),
+                backgroundColor: const Color(0xFF6366F1),
+                padding: const EdgeInsets.symmetric(vertical: 14),
+              ),
               child: const Text('Sign In', style: TextStyle(fontSize: 16)),
             ),
           ),
@@ -788,8 +943,11 @@ class _ProfileScreen extends StatelessWidget {
   final Map<String, String> allUsers;
   final VoidCallback onSignOut;
 
-  const _ProfileScreen(
-      {required this.user, required this.allUsers, required this.onSignOut});
+  const _ProfileScreen({
+    required this.user,
+    required this.allUsers,
+    required this.onSignOut,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -801,8 +959,10 @@ class _ProfileScreen extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: onSignOut,
-            child: const Text('Sign Out',
-                style: TextStyle(color: Color(0xFF818CF8))),
+            child: const Text(
+              'Sign Out',
+              style: TextStyle(color: Color(0xFF818CF8)),
+            ),
           ),
         ],
       ),
@@ -818,32 +978,42 @@ class _ProfileScreen extends StatelessWidget {
                 children: [
                   Navii(seed: user, size: 100),
                   const SizedBox(height: 12),
-                  Text(user,
-                      style: const TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFFE2E8F0))),
+                  Text(
+                    user,
+                    style: const TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFFE2E8F0),
+                    ),
+                  ),
                   const SizedBox(height: 4),
-                  Text('Seed: "$user"',
-                      style: const TextStyle(
-                          fontSize: 12,
-                          color: Color(0xFF64748B),
-                          fontFamily: 'monospace')),
+                  Text(
+                    'Seed: "$user"',
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Color(0xFF64748B),
+                      fontFamily: 'monospace',
+                    ),
+                  ),
                   const SizedBox(height: 16),
                   // Show avatar is stable — same user, 3 renders
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text('Always the same:  ',
-                          style: TextStyle(
-                              fontSize: 12, color: Color(0xFF64748B))),
+                      const Text(
+                        'Always the same:  ',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Color(0xFF64748B),
+                        ),
+                      ),
                       ...List.generate(
-                          3,
-                          (i) => Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 3),
-                                child: Navii(seed: user, size: 28),
-                              )),
+                        3,
+                        (i) => Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 3),
+                          child: Navii(seed: user, size: 28),
+                        ),
+                      ),
                     ],
                   ),
                 ],
@@ -856,15 +1026,18 @@ class _ProfileScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('Similar names — all different avatars',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFFE2E8F0))),
+                  const Text(
+                    'Similar names — all different avatars',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFFE2E8F0),
+                    ),
+                  ),
                   const SizedBox(height: 4),
                   const Text(
-                      'Even one character difference produces a completely unique avatar.',
-                      style:
-                          TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+                    'Even one character difference produces a completely unique avatar.',
+                    style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
+                  ),
                   const SizedBox(height: 16),
                   ..._buildVariants(user),
                 ],
@@ -877,26 +1050,34 @@ class _ProfileScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text('Other users',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xFFE2E8F0))),
+                    const Text(
+                      'Other users',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFFE2E8F0),
+                      ),
+                    ),
                     const SizedBox(height: 12),
                     Wrap(
                       spacing: 16,
                       runSpacing: 16,
                       children: allUsers.values
                           .where((u) => u != user)
-                          .map((u) => Column(
-                                children: [
-                                  Navii(seed: u, size: 52),
-                                  const SizedBox(height: 4),
-                                  Text(u.split(' ').first,
-                                      style: const TextStyle(
-                                          fontSize: 11,
-                                          color: Color(0xFF64748B))),
-                                ],
-                              ))
+                          .map(
+                            (u) => Column(
+                              children: [
+                                Navii(seed: u, size: 52),
+                                const SizedBox(height: 4),
+                                Text(
+                                  u.split(' ').first,
+                                  style: const TextStyle(
+                                    fontSize: 11,
+                                    color: Color(0xFF64748B),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
                           .toList(),
                     ),
                   ],
@@ -920,33 +1101,41 @@ class _ProfileScreen extends StatelessWidget {
       base.toUpperCase(),
     ];
     return variants
-        .map((v) => Padding(
-              padding: const EdgeInsets.symmetric(vertical: 6),
-              child: Row(
-                children: [
-                  Navii(seed: v, size: 40),
-                  const SizedBox(width: 12),
-                  Text('"$v"',
-                      style: const TextStyle(
-                          fontFamily: 'monospace',
-                          fontSize: 13,
-                          color: Color(0xFFCBD5E1))),
-                  if (v == base)
-                    Container(
-                      margin: const EdgeInsets.only(left: 8),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 6, vertical: 2),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF1E3A8A),
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                      child: const Text('you',
-                          style: TextStyle(
-                              fontSize: 10, color: Color(0xFF93C5FD))),
+        .map(
+          (v) => Padding(
+            padding: const EdgeInsets.symmetric(vertical: 6),
+            child: Row(
+              children: [
+                Navii(seed: v, size: 40),
+                const SizedBox(width: 12),
+                Text(
+                  '"$v"',
+                  style: const TextStyle(
+                    fontFamily: 'monospace',
+                    fontSize: 13,
+                    color: Color(0xFFCBD5E1),
+                  ),
+                ),
+                if (v == base)
+                  Container(
+                    margin: const EdgeInsets.only(left: 8),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 6,
+                      vertical: 2,
                     ),
-                ],
-              ),
-            ))
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF1E3A8A),
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: const Text(
+                      'you',
+                      style: TextStyle(fontSize: 10, color: Color(0xFF93C5FD)),
+                    ),
+                  ),
+              ],
+            ),
+          ),
+        )
         .toList();
   }
 }
@@ -986,17 +1175,19 @@ class _PickerTabState extends State<PickerTab> {
             const Text(
               'Inline Picker',
               style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFFE2E8F0)),
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFFE2E8F0),
+              ),
             ),
             const SizedBox(height: 4),
             const Text(
               'NaviiPicker(baseSeed: ..., onSelected: ...)',
               style: TextStyle(
-                  fontFamily: 'monospace',
-                  fontSize: 11,
-                  color: Color(0xFF64748B)),
+                fontFamily: 'monospace',
+                fontSize: 11,
+                color: Color(0xFF64748B),
+              ),
             ),
             const SizedBox(height: 12),
             Container(
@@ -1020,17 +1211,19 @@ class _PickerTabState extends State<PickerTab> {
             const Text(
               'Bottom Sheet',
               style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFFE2E8F0)),
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFFE2E8F0),
+              ),
             ),
             const SizedBox(height: 4),
             const Text(
               'showNaviiPickerSheet(context, baseSeed: ...)',
               style: TextStyle(
-                  fontFamily: 'monospace',
-                  fontSize: 11,
-                  color: Color(0xFF64748B)),
+                fontFamily: 'monospace',
+                fontSize: 11,
+                color: Color(0xFF64748B),
+              ),
             ),
             const SizedBox(height: 12),
             SizedBox(
@@ -1071,14 +1264,20 @@ class _PickerTabState extends State<PickerTab> {
                 children: const [
                   Row(
                     children: [
-                      Icon(Icons.info_outline,
-                          size: 14, color: Color(0xFF818CF8)),
+                      Icon(
+                        Icons.info_outline,
+                        size: 14,
+                        color: Color(0xFF818CF8),
+                      ),
                       SizedBox(width: 6),
-                      Text('Stable seeds',
-                          style: TextStyle(
-                              fontSize: 13,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xFFE2E8F0))),
+                      Text(
+                        'Stable seeds',
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFFE2E8F0),
+                        ),
+                      ),
                     ],
                   ),
                   SizedBox(height: 6),
@@ -1089,9 +1288,10 @@ class _PickerTabState extends State<PickerTab> {
                     'in your database and render it anywhere with '
                     'Navii(seed: storedSeed).',
                     style: TextStyle(
-                        fontSize: 12,
-                        color: Color(0xFF94A3B8),
-                        height: 1.5),
+                      fontSize: 12,
+                      color: Color(0xFF94A3B8),
+                      height: 1.5,
+                    ),
                   ),
                 ],
               ),
@@ -1126,18 +1326,22 @@ class _CurrentAvatarCard extends StatelessWidget {
             borderWidth: 2.5,
           ),
           const SizedBox(height: 10),
-          const Text('Current avatar',
-              style: TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFFE2E8F0))),
+          const Text(
+            'Current avatar',
+            style: TextStyle(
+              fontSize: 13,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFFE2E8F0),
+            ),
+          ),
           const SizedBox(height: 2),
           Text(
             seed,
             style: const TextStyle(
-                fontFamily: 'monospace',
-                fontSize: 11,
-                color: Color(0xFF64748B)),
+              fontFamily: 'monospace',
+              fontSize: 11,
+              color: Color(0xFF64748B),
+            ),
             textAlign: TextAlign.center,
           ),
         ],
@@ -1154,11 +1358,44 @@ class GalleryTab extends StatelessWidget {
   const GalleryTab({super.key});
 
   static const _seeds = [
-    'alice', 'bob', 'carol', 'david', 'eve', 'frank', 'grace', 'henry',
-    'iris', 'jack', 'kate', 'liam', 'mia', 'noah', 'olivia', 'peter',
-    'quinn', 'rachel', 'sam', 'tina', 'user-001', 'user-002', 'user-003',
-    'user-004', 'user-005', 'user-006', 'alpha', 'beta', 'gamma', 'delta',
-    'kofi', 'ama', 'kwame', 'abena', 'yaw', 'akosua', 'kojo', 'adwoa',
+    'alice',
+    'bob',
+    'carol',
+    'david',
+    'eve',
+    'frank',
+    'grace',
+    'henry',
+    'iris',
+    'jack',
+    'kate',
+    'liam',
+    'mia',
+    'noah',
+    'olivia',
+    'peter',
+    'quinn',
+    'rachel',
+    'sam',
+    'tina',
+    'user-001',
+    'user-002',
+    'user-003',
+    'user-004',
+    'user-005',
+    'user-006',
+    'alpha',
+    'beta',
+    'gamma',
+    'delta',
+    'kofi',
+    'ama',
+    'kwame',
+    'abena',
+    'yaw',
+    'akosua',
+    'kojo',
+    'adwoa',
   ];
 
   @override
@@ -1185,11 +1422,12 @@ class GalleryTab extends StatelessWidget {
             children: [
               Navii(seed: seed, size: 52),
               const SizedBox(height: 3),
-              Text(seed,
-                  style: const TextStyle(
-                      fontSize: 9, color: Color(0xFF475569)),
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 1),
+              Text(
+                seed,
+                style: const TextStyle(fontSize: 9, color: Color(0xFF475569)),
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
+              ),
             ],
           );
         },
@@ -1206,9 +1444,28 @@ class CustomizeTab extends StatelessWidget {
   const CustomizeTab({super.key});
 
   static const _palettes = [
-    'indigo', 'mint', 'amber', 'sky', 'violet', 'cyan', 'rose', 'lime',
-    'peach', 'teal', 'sand', 'plum', 'coral', 'forest', 'slate', 'fuchsia',
-    'terracotta', 'navy', 'lavender', 'charcoal', 'butter', 'aqua',
+    'indigo',
+    'mint',
+    'amber',
+    'sky',
+    'violet',
+    'cyan',
+    'rose',
+    'lime',
+    'peach',
+    'teal',
+    'sand',
+    'plum',
+    'coral',
+    'forest',
+    'slate',
+    'fuchsia',
+    'terracotta',
+    'navy',
+    'lavender',
+    'charcoal',
+    'butter',
+    'aqua',
   ];
 
   @override
@@ -1223,43 +1480,59 @@ class CustomizeTab extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         children: [
           // Sizes
-          const Text('Sizes',
-              style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFFE2E8F0))),
+          const Text(
+            'Sizes',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFFE2E8F0),
+            ),
+          ),
           const SizedBox(height: 4),
-          const Text('Navii(seed: ..., size: 64)',
-              style: TextStyle(
-                  fontFamily: 'monospace',
-                  fontSize: 12,
-                  color: Color(0xFF64748B))),
+          const Text(
+            'Navii(seed: ..., size: 64)',
+            style: TextStyle(
+              fontFamily: 'monospace',
+              fontSize: 12,
+              color: Color(0xFF64748B),
+            ),
+          ),
           const SizedBox(height: 16),
-          ...[24.0, 32.0, 48.0, 64.0, 96.0, 128.0].map((s) => Padding(
-                padding: const EdgeInsets.only(bottom: 16),
-                child: Row(
-                  children: [
-                    Navii(seed: 'size-demo', size: s),
-                    const SizedBox(width: 16),
-                    Text('${s.toInt()}px',
-                        style: const TextStyle(color: Color(0xFF94A3B8))),
-                  ],
-                ),
-              )),
+          ...[24.0, 32.0, 48.0, 64.0, 96.0, 128.0].map(
+            (s) => Padding(
+              padding: const EdgeInsets.only(bottom: 16),
+              child: Row(
+                children: [
+                  Navii(seed: 'size-demo', size: s),
+                  const SizedBox(width: 16),
+                  Text(
+                    '${s.toInt()}px',
+                    style: const TextStyle(color: Color(0xFF94A3B8)),
+                  ),
+                ],
+              ),
+            ),
+          ),
           const SizedBox(height: 8),
           const Divider(color: Color(0xFF334155), height: 32),
           // Palettes
-          const Text('22 Palettes',
-              style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFFE2E8F0))),
+          const Text(
+            '22 Palettes',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFFE2E8F0),
+            ),
+          ),
           const SizedBox(height: 4),
-          const Text("AvatarOptions(paletteId: 'violet')",
-              style: TextStyle(
-                  fontFamily: 'monospace',
-                  fontSize: 12,
-                  color: Color(0xFF64748B))),
+          const Text(
+            "AvatarOptions(paletteId: 'violet')",
+            style: TextStyle(
+              fontFamily: 'monospace',
+              fontSize: 12,
+              color: Color(0xFF64748B),
+            ),
+          ),
           const SizedBox(height: 16),
           GridView.builder(
             shrinkWrap: true,
@@ -1281,10 +1554,14 @@ class CustomizeTab extends StatelessWidget {
                     options: AvatarOptions(paletteId: p),
                   ),
                   const SizedBox(height: 4),
-                  Text(p,
-                      style: const TextStyle(
-                          fontSize: 9, color: Color(0xFF475569)),
-                      overflow: TextOverflow.ellipsis),
+                  Text(
+                    p,
+                    style: const TextStyle(
+                      fontSize: 9,
+                      color: Color(0xFF475569),
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ],
               );
             },
@@ -1292,60 +1569,84 @@ class CustomizeTab extends StatelessWidget {
           const Divider(color: Color(0xFF334155), height: 40),
 
           // Shapes
-          const Text('Shapes',
-              style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFFE2E8F0))),
+          const Text(
+            'Shapes',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFFE2E8F0),
+            ),
+          ),
           const SizedBox(height: 4),
-          const Text('Navii(seed: ..., shape: NaviiShape.circle)',
-              style: TextStyle(
-                  fontFamily: 'monospace',
-                  fontSize: 12,
-                  color: Color(0xFF64748B))),
+          const Text(
+            'Navii(seed: ..., shape: NaviiShape.circle)',
+            style: TextStyle(
+              fontFamily: 'monospace',
+              fontSize: 12,
+              color: Color(0xFF64748B),
+            ),
+          ),
           const SizedBox(height: 16),
           Row(
             children: [
-              Column(children: [
-                Navii(seed: 'shape-demo', size: 64, shape: NaviiShape.circle),
-                const SizedBox(height: 4),
-                const Text('circle',
-                    style:
-                        TextStyle(fontSize: 11, color: Color(0xFF64748B))),
-              ]),
+              Column(
+                children: [
+                  Navii(seed: 'shape-demo', size: 64, shape: NaviiShape.circle),
+                  const SizedBox(height: 4),
+                  const Text(
+                    'circle',
+                    style: TextStyle(fontSize: 11, color: Color(0xFF64748B)),
+                  ),
+                ],
+              ),
               const SizedBox(width: 24),
-              Column(children: [
-                Navii(seed: 'shape-demo', size: 64, shape: NaviiShape.rounded),
-                const SizedBox(height: 4),
-                const Text('rounded',
-                    style:
-                        TextStyle(fontSize: 11, color: Color(0xFF64748B))),
-              ]),
+              Column(
+                children: [
+                  Navii(
+                    seed: 'shape-demo',
+                    size: 64,
+                    shape: NaviiShape.rounded,
+                  ),
+                  const SizedBox(height: 4),
+                  const Text(
+                    'rounded',
+                    style: TextStyle(fontSize: 11, color: Color(0xFF64748B)),
+                  ),
+                ],
+              ),
               const SizedBox(width: 24),
-              Column(children: [
-                Navii(seed: 'shape-demo', size: 64, shape: NaviiShape.square),
-                const SizedBox(height: 4),
-                const Text('square',
-                    style:
-                        TextStyle(fontSize: 11, color: Color(0xFF64748B))),
-              ]),
+              Column(
+                children: [
+                  Navii(seed: 'shape-demo', size: 64, shape: NaviiShape.square),
+                  const SizedBox(height: 4),
+                  const Text(
+                    'square',
+                    style: TextStyle(fontSize: 11, color: Color(0xFF64748B)),
+                  ),
+                ],
+              ),
             ],
           ),
           const Divider(color: Color(0xFF334155), height: 40),
 
           // Status dots & borders
-          const Text('Status & Border',
-              style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFFE2E8F0))),
+          const Text(
+            'Status & Border',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFFE2E8F0),
+            ),
+          ),
           const SizedBox(height: 4),
           const Text(
-              'Navii(seed: ..., statusColor: ..., borderColor: ...)',
-              style: TextStyle(
-                  fontFamily: 'monospace',
-                  fontSize: 12,
-                  color: Color(0xFF64748B))),
+            'Navii(seed: ..., statusColor: ..., borderColor: ...)',
+            style: TextStyle(
+              fontFamily: 'monospace',
+              fontSize: 12,
+              color: Color(0xFF64748B),
+            ),
+          ),
           const SizedBox(height: 16),
           Wrap(
             spacing: 20,
@@ -1354,63 +1655,77 @@ class CustomizeTab extends StatelessWidget {
               _LabelledAvatar(
                 label: 'online',
                 child: Navii(
-                    seed: 'status-demo',
-                    size: 56,
-                    statusColor: const Color(0xFF22C55E)),
+                  seed: 'status-demo',
+                  size: 56,
+                  statusColor: const Color(0xFF22C55E),
+                ),
               ),
               _LabelledAvatar(
                 label: 'away',
                 child: Navii(
-                    seed: 'status-demo-2',
-                    size: 56,
-                    statusColor: const Color(0xFFF59E0B),
-                    statusAlignment: Alignment.bottomRight),
+                  seed: 'status-demo-2',
+                  size: 56,
+                  statusColor: const Color(0xFFF59E0B),
+                  statusAlignment: Alignment.bottomRight,
+                ),
               ),
               _LabelledAvatar(
                 label: 'busy',
                 child: Navii(
-                    seed: 'status-demo-3',
-                    size: 56,
-                    statusColor: const Color(0xFFEF4444)),
+                  seed: 'status-demo-3',
+                  size: 56,
+                  statusColor: const Color(0xFFEF4444),
+                ),
               ),
               _LabelledAvatar(
                 label: 'border',
                 child: Navii(
-                    seed: 'border-demo',
-                    size: 56,
-                    borderColor: const Color(0xFF818CF8),
-                    borderWidth: 3),
+                  seed: 'border-demo',
+                  size: 56,
+                  borderColor: const Color(0xFF818CF8),
+                  borderWidth: 3,
+                ),
               ),
               _LabelledAvatar(
                 label: 'both',
                 child: Navii(
-                    seed: 'border-demo-2',
-                    size: 56,
-                    borderColor: const Color(0xFF22C55E),
-                    statusColor: const Color(0xFF22C55E)),
+                  seed: 'border-demo-2',
+                  size: 56,
+                  borderColor: const Color(0xFF22C55E),
+                  statusColor: const Color(0xFF22C55E),
+                ),
               ),
             ],
           ),
           const Divider(color: Color(0xFF334155), height: 40),
 
           // Group avatars
-          const Text('Group Avatars',
-              style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFFE2E8F0))),
+          const Text(
+            'Group Avatars',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFFE2E8F0),
+            ),
+          ),
           const SizedBox(height: 4),
           const Text(
-              'NaviiGroup(seeds: [...], size: 36, maxVisible: 3)',
-              style: TextStyle(
-                  fontFamily: 'monospace',
-                  fontSize: 12,
-                  color: Color(0xFF64748B))),
+            'NaviiGroup(seeds: [...], size: 36, maxVisible: 3)',
+            style: TextStyle(
+              fontFamily: 'monospace',
+              fontSize: 12,
+              color: Color(0xFF64748B),
+            ),
+          ),
           const SizedBox(height: 16),
           NaviiGroup(
             seeds: const [
-              'group-a', 'group-b', 'group-c',
-              'group-d', 'group-e', 'group-f',
+              'group-a',
+              'group-b',
+              'group-c',
+              'group-d',
+              'group-e',
+              'group-f',
             ],
             size: 40,
             overlap: 12,
@@ -1419,9 +1734,7 @@ class CustomizeTab extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           NaviiGroup(
-            seeds: const [
-              'team-1', 'team-2', 'team-3', 'team-4',
-            ],
+            seeds: const ['team-1', 'team-2', 'team-3', 'team-4'],
             size: 32,
             overlap: 8,
             shape: NaviiShape.rounded,
@@ -1445,9 +1758,10 @@ class _LabelledAvatar extends StatelessWidget {
       children: [
         child,
         const SizedBox(height: 4),
-        Text(label,
-            style:
-                const TextStyle(fontSize: 11, color: Color(0xFF64748B))),
+        Text(
+          label,
+          style: const TextStyle(fontSize: 11, color: Color(0xFF64748B)),
+        ),
       ],
     );
   }
@@ -1505,8 +1819,10 @@ class _ErrorBanner extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         border: Border.all(color: const Color(0xFF7F1D1D)),
       ),
-      child: Text(message,
-          style: const TextStyle(fontSize: 13, color: Color(0xFFFCA5A5))),
+      child: Text(
+        message,
+        style: const TextStyle(fontSize: 13, color: Color(0xFFFCA5A5)),
+      ),
     );
   }
 }
@@ -1522,8 +1838,10 @@ class _Divider extends StatelessWidget {
         const Expanded(child: Divider(color: Color(0xFF334155))),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12),
-          child: Text(label,
-              style: const TextStyle(fontSize: 12, color: Color(0xFF64748B))),
+          child: Text(
+            label,
+            style: const TextStyle(fontSize: 12, color: Color(0xFF64748B)),
+          ),
         ),
         const Expanded(child: Divider(color: Color(0xFF334155))),
       ],
@@ -1550,11 +1868,14 @@ class _DeterminismNote extends StatelessWidget {
             children: [
               Icon(Icons.info_outline, size: 16, color: Color(0xFF818CF8)),
               SizedBox(width: 6),
-              Text('How it works',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFFE2E8F0),
-                      fontSize: 13)),
+              Text(
+                'How it works',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFFE2E8F0),
+                  fontSize: 13,
+                ),
+              ),
             ],
           ),
           SizedBox(height: 8),
@@ -1564,7 +1885,10 @@ class _DeterminismNote extends StatelessWidget {
             'combinations — deterministically. No server, no database, '
             'works offline.',
             style: TextStyle(
-                fontSize: 12, color: Color(0xFF94A3B8), height: 1.5),
+              fontSize: 12,
+              color: Color(0xFF94A3B8),
+              height: 1.5,
+            ),
           ),
         ],
       ),

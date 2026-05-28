@@ -170,8 +170,8 @@ class _AvatarTile extends StatelessWidget {
                 Positioned(
                   right: -2,
                   bottom: -2,
-                  child: Icon(Icons.check_circle,
-                      color: selectionColor, size: 18),
+                  child:
+                      Icon(Icons.check_circle, color: selectionColor, size: 18),
                 ),
             ],
           ),
@@ -235,10 +235,8 @@ Future<String?> showNaviiPickerSheet(
           const SizedBox(height: 4),
           Text(
             'All options are unique to you. Pick one and it stays yours.',
-            style: Theme.of(ctx)
-                .textTheme
-                .bodySmall
-                ?.copyWith(color: Colors.grey),
+            style:
+                Theme.of(ctx).textTheme.bodySmall?.copyWith(color: Colors.grey),
           ),
           const SizedBox(height: 20),
           NaviiPicker(

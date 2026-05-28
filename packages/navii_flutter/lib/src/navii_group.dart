@@ -53,13 +53,12 @@ class NaviiGroup extends StatelessWidget {
   Widget build(BuildContext context) {
     if (seeds.isEmpty) return const SizedBox.shrink();
 
-    final visible =
-        maxVisible > 0 ? seeds.take(maxVisible).toList() : seeds;
+    final visible = maxVisible > 0 ? seeds.take(maxVisible).toList() : seeds;
     final overflowCount = seeds.length - visible.length;
 
     final step = size - overlap;
-    final totalWidth = size + (visible.length - 1) * step +
-        (overflowCount > 0 ? step : 0);
+    final totalWidth =
+        size + (visible.length - 1) * step + (overflowCount > 0 ? step : 0);
 
     return SizedBox(
       width: totalWidth + borderWidth * 2,
@@ -128,8 +127,7 @@ class _OverflowBadge extends StatelessWidget {
       case NaviiShape.rounded:
         decoration = BoxDecoration(
           color: bg,
-          borderRadius:
-              BorderRadius.circular(size * 0.2 + borderWidth),
+          borderRadius: BorderRadius.circular(size * 0.2 + borderWidth),
           border: Border.all(color: borderColor, width: borderWidth),
         );
       case NaviiShape.square:

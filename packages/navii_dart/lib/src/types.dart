@@ -20,15 +20,40 @@ class Palette {
 }
 
 enum BodyShapeId {
-  orb, tall, squat, pear, pebble, dumpling, taro, wisp,
+  orb,
+  tall,
+  squat,
+  pear,
+  pebble,
+  dumpling,
+  taro,
+  wisp,
 }
 
 enum EyeStyleId {
-  round, wide, squint, wink, sleepy, star, heart, oval, dot, cross,
+  round,
+  wide,
+  squint,
+  wink,
+  sleepy,
+  star,
+  heart,
+  oval,
+  dot,
+  cross,
 }
 
 enum MouthStyleId {
-  smile, grin, open, flat, smirk, awe, tongue, tooth, wave, dot,
+  smile,
+  grin,
+  open,
+  flat,
+  smirk,
+  awe,
+  tongue,
+  tooth,
+  wave,
+  dot,
 }
 
 enum AntennaStyleId { none, classic, curl, double_, spike }
@@ -38,8 +63,21 @@ enum AccessoryId { none, blush, freckles, sparkle, glasses, eyepatch, mole }
 enum BackgroundId { none, solid, ring }
 
 enum TopperId {
-  none, ears, roundEars, horn, horns, tuft, cap, leaf,
-  headband, halo, crown, antlers, bob, bun, ponytail,
+  none,
+  ears,
+  roundEars,
+  horn,
+  horns,
+  tuft,
+  cap,
+  leaf,
+  headband,
+  halo,
+  crown,
+  antlers,
+  bob,
+  bun,
+  ponytail,
 }
 
 enum OutfitId { none, collar, scarf, bowtie, sunflower, necklace, tie }

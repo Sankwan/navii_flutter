@@ -38,7 +38,8 @@ String renderOutfit(OutfitId id, FaceAnchor anchor, Palette palette) {
         final px = fx + math.cos(a) * 3.2;
         final py = fy + math.sin(a) * 3.2;
         final deg = (a * 180 / math.pi).toStringAsFixed(1);
-        petals.write('<ellipse cx="${px.toStringAsFixed(2)}" cy="${py.toStringAsFixed(2)}" rx="2.4" ry="1.3" fill="#FACC15" stroke="$ink" stroke-width="0.35" transform="rotate($deg ${px.toStringAsFixed(2)} ${py.toStringAsFixed(2)})" />');
+        petals.write(
+            '<ellipse cx="${px.toStringAsFixed(2)}" cy="${py.toStringAsFixed(2)}" rx="2.4" ry="1.3" fill="#FACC15" stroke="$ink" stroke-width="0.35" transform="rotate($deg ${px.toStringAsFixed(2)} ${py.toStringAsFixed(2)})" />');
       }
       return '<path d="M${fx + 2} ${fy + 2} Q${fx + 4} ${fy + 6} ${fx + 1} ${fy + 10}" stroke="#16A34A" stroke-width="1.1" fill="none" stroke-linecap="round" />'
           '<path d="M${fx + 3} ${fy + 6} Q${fx + 7} ${fy + 4} ${fx + 6} ${fy + 8} Q${fx + 4} ${fy + 8} ${fx + 3} ${fy + 6} Z" fill="#22C55E" stroke="$ink" stroke-width="0.35" />'

@@ -166,9 +166,10 @@ packages:
   navii_dart:
     dependency: transitive
     description:
-      path: "../../navii_dart"
-      relative: true
-    source: path
+      name: navii_dart
+      sha256: "696e634a9b269da0c9d8b9f317f74470a302699458ecc07822c00ea9500df061"
+      url: "https://pub.dev"
+    source: hosted
     version: "0.1.0"
   navii_flutter:
     dependency: "direct main"

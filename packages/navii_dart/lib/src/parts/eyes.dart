@@ -74,7 +74,7 @@ String _glint(double cx, double cy) =>
     '<circle cx="$cx" cy="$cy" r="0.8" fill="#FFFFFF" />';
 
 String _arc(double x1, double y1, double cx, double cy, double x2, double y2,
-    String stroke, double width) =>
+        String stroke, double width) =>
     '<path d="M$x1 $y1 Q$cx $cy $x2 $y2" stroke="$stroke" stroke-width="$width" stroke-linecap="round" fill="none" />';
 
 String _starEye(double cx, double cy, String color) {

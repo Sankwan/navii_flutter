@@ -47,8 +47,7 @@ class NaviiRng {
   }
 
   double next() {
-    final int t =
-        ((((_s0 + _s1) & 0xFFFFFFFF) + _s3) & 0xFFFFFFFF);
+    final int t = ((((_s0 + _s1) & 0xFFFFFFFF) + _s3) & 0xFFFFFFFF);
     _s3 = (_s3 + 1) & 0xFFFFFFFF;
     _s0 = (_s1 ^ (_s1 >>> 9)) & 0xFFFFFFFF;
     _s1 = (_s2 + ((_s2 << 3) & 0xFFFFFFFF)) & 0xFFFFFFFF;
