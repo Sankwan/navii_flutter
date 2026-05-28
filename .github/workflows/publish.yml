@@ -1,0 +1,82 @@
+name: Publish to pub.dev
+
+# Triggered by pushing a version tag.
+#
+# Tag format:
+#   navii_dart-v0.1.0    → publishes packages/navii_dart
+#   navii_flutter-v0.1.0 → publishes packages/navii_flutter
+#
+# Before the first publish:
+#   1. Go to pub.dev → your package → Admin tab
+#   2. Enable "Automated publishing from GitHub Actions"
+#   3. Set tag pattern to: navii_dart-v{{version}}  (or navii_flutter-v{{version}})
+#   4. The OIDC token auth happens automatically — no secrets needed.
+
+on:
+  push:
+    tags:
+      - 'navii_dart-v[0-9]+.[0-9]+.[0-9]+'
+      - 'navii_flutter-v[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  # ── Publish navii_dart ───────────────────────────────────────────────────────
+  publish-navii_dart:
+    name: Publish navii_dart
+    if: startsWith(github.ref, 'refs/tags/navii_dart-v')
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # required for pub.dev OIDC auth
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - name: Install dependencies
+        working-directory: packages/navii_dart
+        run: dart pub get
+
+      - name: Analyze
+        working-directory: packages/navii_dart
+        run: dart analyze --fatal-infos
+
+      - name: Run tests
+        working-directory: packages/navii_dart
+        run: dart test
+
+      - name: Publish
+        working-directory: packages/navii_dart
+        run: dart pub publish --force
+
+  # ── Publish navii_flutter ────────────────────────────────────────────────────
+  publish-navii_flutter:
+    name: Publish navii_flutter
+    if: startsWith(github.ref, 'refs/tags/navii_flutter-v')
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # required for pub.dev OIDC auth
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Install dependencies
+        working-directory: packages/navii_flutter
+        run: flutter pub get
+
+      - name: Analyze
+        working-directory: packages/navii_flutter
+        run: flutter analyze
+
+      - name: Run tests
+        working-directory: packages/navii_flutter
+        run: flutter test
+
+      - name: Publish
+        working-directory: packages/navii_flutter
+        run: dart pub publish --force

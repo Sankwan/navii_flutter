@@ -1,0 +1,90 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  # ── navii_dart ──────────────────────────────────────────────────────────────
+  navii_dart:
+    name: navii_dart — analyze & test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/navii_dart
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - name: Install dependencies
+        run: dart pub get
+
+      - name: Verify formatting
+        run: dart format --set-exit-if-changed .
+
+      - name: Analyze
+        run: dart analyze --fatal-infos
+
+      - name: Run tests
+        run: dart test
+
+  # ── navii_flutter ────────────────────────────────────────────────────────────
+  navii_flutter:
+    name: navii_flutter — analyze & test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/navii_flutter
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Verify formatting
+        run: dart format --set-exit-if-changed .
+
+      - name: Analyze
+        run: flutter analyze
+
+      - name: Run tests
+        run: flutter test
+
+  # ── dry-run publish check ────────────────────────────────────────────────────
+  publish-dry-run:
+    name: pub publish --dry-run
+    runs-on: ubuntu-latest
+    needs: [navii_dart, navii_flutter]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: navii_dart dry-run
+        working-directory: packages/navii_dart
+        run: |
+          dart pub get
+          dart pub publish --dry-run
+
+      - name: navii_flutter dry-run
+        working-directory: packages/navii_flutter
+        run: |
+          flutter pub get
+          dart pub publish --dry-run

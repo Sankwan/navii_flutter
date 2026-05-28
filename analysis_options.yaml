@@ -1,0 +1,3 @@
+# Root analysis options — individual packages extend their own.
+# This file is picked up by IDEs when working at the repo root.
+include: package:lints/recommended.yaml

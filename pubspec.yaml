@@ -1,0 +1,11 @@
+# Dart workspace root — links all packages for local development.
+# Run `dart pub get` here once; all packages share the resolution.
+name: navii_workspace
+
+environment:
+  sdk: '>=3.5.0 <4.0.0'
+
+workspace:
+  - packages/navii_dart
+  - packages/navii_flutter
+  - packages/navii_flutter/example

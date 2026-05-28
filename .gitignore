@@ -1,0 +1,49 @@
+# Dart / Flutter
+.dart_tool/
+.packages
+build/
+*.iml
+pubspec.lock
+
+# Exception: keep example app's pubspec.lock (reproducible builds)
+!packages/navii_flutter/example/pubspec.lock
+
+# Flutter-specific
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Android
+**/android/.gradle/
+**/android/local.properties
+**/android/key.properties
+**/android/app/google-services.json
+
+# iOS / macOS
+**/ios/Pods/
+**/ios/.symlinks/
+**/macos/Pods/
+**/macos/.symlinks/
+*.xcworkspace/
+!default.xcworkspace
+
+# Web
+lib/generated_plugin_registrant.dart
+
+# Generated code
+*.g.dart
+*.freezed.dart
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage/
+lcov.info
+
+# Pub cache (never commit this)
+.pub-cache/

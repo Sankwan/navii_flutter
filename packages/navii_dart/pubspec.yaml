@@ -1,0 +1,27 @@
+name: navii_dart
+description: >-
+  Deterministic mascot-style avatar generation for Dart.
+  Same seed = same SVG, every time, on every platform.
+  No database, no uploads, no state required.
+version: 0.1.0
+repository: https://github.com/Sankwan/navii_flutter/tree/main/packages/navii_dart
+homepage: https://github.com/Sankwan/navii_flutter
+issue_tracker: https://github.com/Sankwan/navii_flutter/issues
+funding:
+  - https://github.com/sponsors/Sankwan
+
+topics:
+  - avatar
+  - deterministic
+  - svg
+  - mascot
+  - offline
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies: {}
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.24.0
